@@ -86,40 +86,120 @@ function switchToManual() {
 
 const navbar = document.getElementById("header");
 
-$(function(){
+$(function () {
     $("#header").load("navbar.html");
 });
 
-// function displayNavbar() {
+let list1 = [];
+let list2 = [];
+let list3 = [];
+let list4 = [];
 
-//     navbar.innerHTML = `
+let n = 1;
+
+let x = 0;
+
+function addRow() {
+
+    let rownumber = document.getElementById("tableShow");
+    let NewRow = rownumber.insertRow(n);
+
+    list1[x] = document.getElementById("numberOfCourses").value;
+    list2[x] = document.getElementById("gradeRecieved").value;
+    list3[x] = document.getElementById("creditsFinished").value;
+
+    let cell1 = NewRow.insertCell(0);
+    let cell2 = NewRow.insertCell(1);
+    let cell3 = NewRow.insertCell(2);
+
+    for (let i = 0; i < document.getElementById("numberOfCourses").value; i++) {
+        $(cell1).html(
+            list1[x]
+        )
+
+        $(cell2).html(
+            list2[x]
+        )
+
+        $(cell3).html(
+            list3[x]
+        )
+
+        n++;
+        x++;
+    }
+
+        localStorage.setItem('Courses', document.getElementById("numberOfCourses").value);
+        localStorage.setItem('Grade', document.getElementById("gradeRecieved").value);
+        localStorage.setItem('Credits', document.getElementById("creditsFinished").value);
     
-//     <div class="row">
-//     <div class="col">
-//         <img class="burger-menu" data-bs-toggle="offcanvas" href="#openNavbar" role="button"
-//             aria-controls="openNavbar" id="burger-menu" src="resources/images/burger-menu.svg">
-//     </div>
-//     <div class="col">
-//         <h2 id="top-heading">GPA CALCULATOR</h2>
-//     </div>
-// </div>
-// <div class="offcanvas offcanvas-start" tabindex="-1" id="openNavbar" aria-labelledby="openNavbar">
-//     <div class="offcanvas-header">
-//         <h5 class="offcanvas-title" id="openNavbar"></h5>
-//         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
+}
 
-//         </button>
-//     </div>
-//     <div class="offcanvas-body">
-//         <nav class="navbar-container">
-//             <a href="index.html">Home</a>
-//             <a href="login.html">Log In</a>
-//             <a href="manual.html">Check GPA</a>
-//             <a href="automated.html">Automate Tables</a>
-//         </nav>
-//     </div>
-// </div>
-// `;
-// }
+function calculateGpa() {
 
-// displayNavbar();
+    let courses = localStorage.getItem('Courses');
+
+    let grade = localStorage.getItem('Grade');
+
+    let converted = convertLetterGrade(grade);
+    console.log(converted);
+
+    let credits = localStorage.getItem('Credits');
+
+    let points = credits * converted;
+
+    let gpa = points / credits;
+
+    console.log(gpa);
+
+    $(".display-gpa").html(`
+    <br>
+    <br>
+    GPA: ${gpa}
+    `);
+
+
+}
+
+calculateGpa();
+
+function convertLetterGrade(gradeLetter) {
+
+    let points = 0;
+
+    if (gradeLetter === 'A+') {
+        points = 9;
+    }
+    else if (gradeLetter === 'A') {
+        points = 8;
+    }
+    else if (gradeLetter === 'B+') {
+        points = 7;
+    }
+    else if (gradeLetter === 'B') {
+        points = 6;
+    }
+    else if (gradeLetter === 'C+') {
+        points = 5;
+    }
+    else if (gradeLetter === 'C') {
+        points = 4;
+    }
+    else if (gradeLetter === 'D+') {
+        points = 3;
+    }
+    else if (gradeLetter === 'D') {
+        points = 2;
+    }
+    else if (gradeLetter === 'E') {
+        points = 1;
+    }
+    else if (gradeLetter === 'F') {
+        points = 0;
+    }
+    else {
+        return points;
+    }
+
+    return points;
+}

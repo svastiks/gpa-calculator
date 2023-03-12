@@ -25,7 +25,7 @@ span {
 
 #top-heading {
     display: flex;
-    color: #FFFFFF;
+    color: black;
     margin: 20px 0 0 -28px;
     font-size: 30px;
 }
@@ -105,39 +105,65 @@ span {
 /* Automated Page */
 
 .body-automated {
-    background-color: black;
+    background-color: #FBFFFE;
+}
+
+.header-text {
+    color: black;
 }
 
 .question {
     font-size: 30px;
-    margin: 150px 0 0 0;
+    margin: 30px 0 0 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 10px solid black;
-    background-color: #FFFFFF;
+    /* border: 10px solid black; */
+    /* background-color: #FFFFFF; */
     text-align: center;
     border-radius: 45px;
     padding: 20px;
 }
 
-#userCourses input{
-    border: transparent;
+#userCourses input {
     text-align: center;
     color: black;
+    border-radius: 15px;
 }
 
 /* #userCourses input::placeholder{
     color: black;
 } */
 
-#userCourses span{
-    color:black;
+#userCourses span {
+    color: black;
     font-size: 20px;
 }
 
 .generate {
-    background-color: #FFFFFF;
+    background-color:slategray;
     border-radius: 10px;
     margin-top: 10px;
+    color:#FFFFFF;
+    border: transparent;
+    -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+    padding: 5px 10px 5px 10px;
+    margin-top: 30px;
+}
+
+.generate:hover{
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+/* .generate span{
+    font-size: 30px;
+} */
+
+/* Manual Page */
+
+.body-manual {
+    background-color: aqua;
 }

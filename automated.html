@@ -22,6 +22,7 @@
 
     <div class="body-text">
         <div class="question">
+            <span class="header-text"></span>
             <form id="userCourses">
                 <span>Input the number of courses</span>
                 <input type="number" id="numberOfCourses" placeholder="Type Here...">
@@ -32,10 +33,34 @@
 
                 <span>Credits <br> (Only allowed to put the same credit course)</span>
 
-                <input type="number" id="gradeRecieved" placeholder="Credits: 1 or 2 or 3">
+                <input type="number" id="creditsFinished" placeholder="Credits: 1 or 2 or 3">
             </form>
-            <button class="generate" id="generate">Generate</button>
+            <button onclick="addRow()"class="generate" id="generate"><span>Generate</span></button>
         </div>
+
+        <div class="gradeTable">
+            <table class = "tableShow" id="tableShow">
+                <tr>
+                    <th>
+                        Number
+                    </th>
+                    <th>
+                        Course
+                    </th>
+                    <th>
+                        Credit
+                    </th>
+                    <th>
+                        Grade
+                    </th>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="display-gpa">
+
+    </div>
 
         <!-- Js Scripts -->
         <script src="resources/js/script.js"></script>
