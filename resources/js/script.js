@@ -84,10 +84,9 @@ function switchToManual() {
 
 }
 
-const navbar = document.getElementsByClassName("header-container");
+const navbar = document.getElementById("header");
 
-
-$(".header-container").html(`
+navbar.innerHTML = `
     
     <div class="row">
     <div class="col">
@@ -114,6 +113,4 @@ $(".header-container").html(`
         </nav>
     </div>
 </div>
-    
-    `
-)
+`
