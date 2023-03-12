@@ -70,9 +70,9 @@ function askQuestion() {
 }
 
 const buttonOne = document.querySelector('#optionOne');
-buttonOne.addEventListener('click', () => {
-    clicked = 'true';
-})
+// buttonOne.addEventListener('click', () => {
+//     clicked = 'true';
+// })
 
 function switchToAuto() {
     window.location = 'automated.html';
@@ -86,31 +86,40 @@ function switchToManual() {
 
 const navbar = document.getElementById("header");
 
-navbar.innerHTML = `
-    
-    <div class="row">
-    <div class="col">
-        <img class="burger-menu" data-bs-toggle="offcanvas" href="#openNavbar" role="button"
-            aria-controls="openNavbar" id="burger-menu" src="resources/images/burger-menu.svg">
-    </div>
-    <div class="col">
-        <h2 id="top-heading">GPA CALCULATOR</h2>
-    </div>
-</div>
-<div class="offcanvas offcanvas-start" tabindex="-1" id="openNavbar" aria-labelledby="openNavbar">
-    <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="openNavbar"></h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
+$(function(){
+    $("#header").load("navbar.html");
+});
 
-        </button>
-    </div>
-    <div class="offcanvas-body">
-        <nav class="navbar-container">
-            <a href="index.html">Home</a>
-            <a href="login.html">Log In</a>
-            <a href="manual.html">Check GPA</a>
-            <a href="automated.html">Automate Tables</a>
-        </nav>
-    </div>
-</div>
-`
+// function displayNavbar() {
+
+//     navbar.innerHTML = `
+    
+//     <div class="row">
+//     <div class="col">
+//         <img class="burger-menu" data-bs-toggle="offcanvas" href="#openNavbar" role="button"
+//             aria-controls="openNavbar" id="burger-menu" src="resources/images/burger-menu.svg">
+//     </div>
+//     <div class="col">
+//         <h2 id="top-heading">GPA CALCULATOR</h2>
+//     </div>
+// </div>
+// <div class="offcanvas offcanvas-start" tabindex="-1" id="openNavbar" aria-labelledby="openNavbar">
+//     <div class="offcanvas-header">
+//         <h5 class="offcanvas-title" id="openNavbar"></h5>
+//         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
+
+//         </button>
+//     </div>
+//     <div class="offcanvas-body">
+//         <nav class="navbar-container">
+//             <a href="index.html">Home</a>
+//             <a href="login.html">Log In</a>
+//             <a href="manual.html">Check GPA</a>
+//             <a href="automated.html">Automate Tables</a>
+//         </nav>
+//     </div>
+// </div>
+// `;
+// }
+
+// displayNavbar();
