@@ -22,18 +22,19 @@
 
     <div class="body-text">
         <div class="question">
-            <span>Input the number of</span>
-            <form>
-                <input type="text" id="numberOfCourses" placeholder="courses">
+            <form id="userCourses">
+                <span>Input the number of courses</span>
+                <input type="number" id="numberOfCourses" placeholder="Type Here...">
+                <br>
+                <span>you got the common grade of</span>
 
-                <span>you got a/an</span>
+                <input type="text" id="gradeRecieved" placeholder="Grade: A+, A, B+,...">
 
-                <input type="text" id="gradeRecieved" placeholder="Grade: A+, A, B+, B, C+, C, D+, D, F, E">
+                <span>Credits <br> (Only allowed to put the same credit course)</span>
 
-                <span style="font-size: 18px;">Credits (Only allowed to put the same credit course)</span>
-
-                <input type="text" id="gradeRecieved" placeholder="Credits: 1.0 or 2.0 or 3.0">
+                <input type="number" id="gradeRecieved" placeholder="Credits: 1 or 2 or 3">
             </form>
+            <button class="generate" id="generate">Generate</button>
         </div>
 
         <!-- Js Scripts -->
