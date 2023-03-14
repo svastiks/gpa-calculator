@@ -165,5 +165,16 @@ span {
 /* Manual Page */
 
 .body-manual {
-    background-color: aqua;
+    background-color: white;
+}
+
+#manualTable{
+    display: flex;
+    justify-content: center;
+    margin: 100px 0 0 0;
+}
+
+td, th{
+    border-width: 1px !important;
+    padding: 15px;
 }
